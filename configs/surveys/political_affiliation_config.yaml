@@ -1,11 +1,11 @@
 defaults:
-  - backstories: self_generated
+  - backstories: test
   - questionnaire/party_affiliation: party_affiliation_questions
   - special_prompt: consistency_prompt
   - format/mcq_symbol: uppercase
   - format/choice_format: curved_bracket
   - format/surveyor_respondent: question_answer
-  - llm_parameters: llama3_70b_together
+  - llm_parameters: phi_4
   - _self_
 
 # number of samples to obtain for each questionnaire
@@ -17,10 +17,10 @@ hydra:
     dir: outputs/political_affiliation/${now:%Y-%m-%d}/${now:%H-%M-%S}
 
 run_dir: ${hydra:runtime.output_dir}
-save_dir: /rscratch/data/anthology/outputs/political_affiliation
+save_dir: /home/v_rahimzadeh/impersonation/generate_backstories/process_and_generate_two_step/forked_anthology/anthology/outputs/political_affiliation
 
 # output data name
-output_data_name: ${now:%Y-%m-%d}_${now:%H-%M-%S}
+output_data_name: forked_test
 
 # Debugging mode
 debug: false

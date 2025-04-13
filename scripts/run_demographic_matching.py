@@ -722,7 +722,7 @@ def my_app(cfg):
 
     trait_list = "+".join(trait_of_interest["llm"])
     combined_information.to_pickle(
-        f"/scratch/data/anthology/outputs/matching_human_virtual/{human_survey}/{cfg.matching_method}/{human_survey}_matching_to_method_{cfg.matching_method}_trait_of_interest_{trait_list}_concatenated_users.pkl"
+        f"/home/v_rahimzadeh/impersonation/generate_backstories/process_and_generate_two_step/forked_anthology/anthology/outputs/matching_human_virtual/{human_survey}/{cfg.matching_method}/{human_survey}_matching_to_method_{cfg.matching_method}_trait_of_interest_{trait_list}_concatenated_users.pkl"
     )
 
     qa_prompt_freeform = QA_FREEFORM_PROMPT[human_survey]
@@ -852,7 +852,7 @@ def my_app(cfg):
                 raise ValueError(f"Invalid prompt style: {prompt_style}")
         # save the file to dataframe
         demographics_survey.to_csv(
-            f"/scratch/data/anthology/outputs/matching_human_virtual/{human_survey}/{cfg.matching_method}/{human_survey}_matching_to_method_{cfg.matching_method}_trait_of_interest_{trait_list}_{prompt_style}_appended_backstory.csv",
+            f"/home/v_rahimzadeh/impersonation/generate_backstories/process_and_generate_two_step/forked_anthology/anthology/outputs/matching_human_virtual/{human_survey}/{cfg.matching_method}/{human_survey}_matching_to_method_{cfg.matching_method}_trait_of_interest_{trait_list}_{prompt_style}_appended_backstory.csv",
             index=False,
         )
         
