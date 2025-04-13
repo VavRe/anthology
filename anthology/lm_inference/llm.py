@@ -80,6 +80,9 @@ def get_tokenizer(llm="davinci"):
             return AutoTokenizer.from_pretrained("mistralai/Mixtral-8x7B-v0.1")
         elif "mistral-7b" in llm.lower():
             return AutoTokenizer.from_pretrained("mistral-community/Mistral-7B-v0.2")
+        elif "phi" in llm.lower():
+            return AutoTokenizer.from_pretrained("/home/v_rahimzadeh/hf_models/models--microsoft--Phi-4-mini-instruct/snapshots/d02e859785d6a6ee7cb2ed7913e32b7a0e8665b4")
+
         else:
             # TODO: Add more LLMs
             raise ValueError(f"invalid model name: {llm}")

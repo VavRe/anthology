@@ -81,7 +81,7 @@ def greedy_matching(
     edge_weight_list = []
     for human_idx in range(len(edge_weight)):
         tuple_list.append(
-            tuple([human_data.at[human_idx, "QKEY"],demographics_survey.at[np.argmax(edge_weight[human_idx]), "uid"]])
+            tuple([human_data.at[human_idx, "QKEY"],demographics_survey.iloc[np.argmax(edge_weight[human_idx])].uid])
         )
         edge_weight_list.append(np.max(edge_weight[human_idx]))
     return {

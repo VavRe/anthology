@@ -1,6 +1,6 @@
 defaults:
   - self_generate: self_generate
-  - llm_parameters: phi_4
+  - llm_parameters: phi_44
   - _self_
 
 # Set the output directory
