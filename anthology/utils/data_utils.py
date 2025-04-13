@@ -24,11 +24,13 @@ def get_config_path(path: Union[str, pathlib.Path]) -> pathlib.Path:
 def save_result_to_csv(output: dict, output_data_path: str):
     df = pd.DataFrame.from_dict(output, orient="index")
     df.reset_index(inplace=True, drop=True)
+    df['uid'] = df.index
     df.to_csv(output_data_path)
 
 
 def save_result_to_pkl(output: dict, output_data_path: str):
     df = pd.DataFrame.from_dict(output, orient="index")
+    df['uid'] = df.index
     df.to_pickle(output_data_path)
 
 

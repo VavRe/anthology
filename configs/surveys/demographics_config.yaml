@@ -1,11 +1,11 @@
 defaults:
-  - backstories: self_generated
+  - backstories: test
   - questionnaire/demographics: demographics_questions
   - special_prompt: consistency_prompt
   - format/mcq_symbol: uppercase
   - format/choice_format: curved_bracket
   - format/surveyor_respondent: question_answer
-  - llm_parameters: llama3_70b_together
+  - llm_parameters: phi_4
   - _self_
 
 
@@ -21,9 +21,9 @@ llm_parsing_parameters:
   temperature: 0.0
   max_tokens: 256
   top_p: 1.0
-  model_name: "gpt-4o"
-  api_key:
-  api_base: "https://api.openai.com/v1"
+  model_name: "/home/v_rahimzadeh/hf_models/models--microsoft--Phi-4-mini-instruct/snapshots/d02e859785d6a6ee7cb2ed7913e32b7a0e8665b4"
+  api_key: "EMPTY"
+  api_base: "http://localhost:8000/v1"
   top_logprobs: 0
   logprobs: False
 
@@ -33,7 +33,7 @@ hydra:
     dir: outputs/demographics_survey/${now:%Y-%m-%d}/${now:%H-%M-%S}
 
 run_dir: ${hydra:runtime.output_dir}
-save_dir: /rscratch/data/anthology/outputs/demographics_survey
+save_dir: /home/v_rahimzadeh/impersonation/generate_backstories/process_and_generate_two_step/forked_anthology/anthology/outputs/demographics_survey
 
 # output data name
 output_data_name: ${now:%Y-%m-%d}_${now:%H-%M-%S}
@@ -42,7 +42,7 @@ output_data_name: ${now:%Y-%m-%d}_${now:%H-%M-%S}
 debug: False
 
 # Parallelization parameter
-num_processes: 1
+num_processes: 10
 
 # The seed to use for the random number generator
 random_seed: 42

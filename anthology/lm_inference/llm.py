@@ -147,7 +147,7 @@ def prompt_llm_chat(
     if "gpt" in model_name:
         openai_api_base = "https://api.openai.com/v1"
     else:
-        openai_api_base = "https://api.together.xyz/v1"
+        openai_api_base = "http://localhost:8000/v1"
     response = openai.ChatCompletion.create(
         model=model_name,
         messages=[

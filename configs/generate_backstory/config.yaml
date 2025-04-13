@@ -13,6 +13,8 @@ save_dir: /home/v_rahimzadeh/impersonation/generate_backstories/process_and_gene
 num_backstories: 2
 num_processes: 4
 freq: 10
-output_data_name: ${now:%Y-%m-%d}_${now:%H-%M-%S}
+# Replace this with the name of the experiment
+# output_data_name: ${now:%Y-%m-%d}_${now:%H-%M-%S}
+output_data_name: fork_test
 
 debug: false
